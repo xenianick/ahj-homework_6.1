@@ -9,12 +9,14 @@ export default function dragCard(task, taskCard, tasksArray, downEvent) {
   const dummy = createNewElement('div', 'dummy');
   const taskCardMarginBottom = getComputedStyle(taskCard).marginBottom;
   const taskCardMarginBottomInt = parseInt(taskCardMarginBottom, 10);
+  const taskCardWidth = taskCard.offsetWidth;
   dummy.style = `height:${taskCard.offsetHeight + taskCardMarginBottomInt}px`;
 
   taskCard.after(dummy);
 
   document.body.appendChild(taskCard);
   taskCard.classList.add('dragged');
+  taskCard.style = `width:${taskCardWidth}px`;
 
   moveAt(taskCard, downEvent.pageX, downEvent.pageY, shiftX, shiftY);
 
