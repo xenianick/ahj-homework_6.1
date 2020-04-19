@@ -1,0 +1,91 @@
+body {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: #191970;
+  background-image: url('../img/square.png');
+}
+:global(.main-container) {
+  display: flex;
+}
+:global(.columns-container) {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+:global(.column) {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 20px;
+  padding: 0 20px;
+  box-sizing: border-box;
+  border: 1px dotted #191970;
+  border-radius: 5px;
+  background-color: #c1e8ff;
+}
+:global(.column-header) {
+  padding-left: 10px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+:global(.adding-card-btn) {
+  font-size: 16px;
+  width: fit-content;
+  cursor: pointer;
+}
+:global(.task-card) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 226px;
+  margin: 0 0 15px;
+  padding: 5px 5px 15px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  box-shadow: 0px 3px 6px rgba(0,0,0,0.3);
+}
+:global(.task-input) {
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #191970;
+}
+:global(.task-delete-btn-container) {
+  width: 5%;
+}
+:global(.task-add-btn) {
+  width: 70px;
+  height: 25px;
+  margin: 10px 0 0;
+  border: none;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #6ec03f;
+  outline: none;
+  cursor: pointer;
+}
+:global(.task-delete-btn) {
+  width: 12px;
+  line-height: 0.7;
+  opacity: 0;
+  cursor: pointer;
+}
+:global(.task-card:hover .task-delete-btn) {
+  opacity: 1;
+}
+textarea {
+  resize: none;
+  outline: none;
+}
+:global(.dragged) {
+  /* pointer-events: none; */
+  cursor: grabbing;
+  position: fixed;
+  z-index: 1000;
+}
+:global(.dragged .task-input) {
+  pointer-events: none;
+  cursor: grabbing;
+}
